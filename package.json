@@ -1,0 +1,28 @@
+{
+  "name": "farming-simulator-snippets",
+  "displayName": "FS snippets",
+  "publisher": "GBModding",
+  "icon": "images/icon.png",
+  "description": "Collection of snippets for a Farming Simulator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GBModdings/farming-simulator-snippets.git"
+  },
+  "homepage": "https://github.com/GBModdings/farming-simulator-snippets/blob/main/README.md",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "license": "MIT",
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "xml",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}

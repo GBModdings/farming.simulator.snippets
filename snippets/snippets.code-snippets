@@ -1,0 +1,324 @@
+{
+  "Store Data": {
+		"prefix": "/stData",
+		"body": [
+			"<storeData>",
+			"    <name>",
+			"       <en>$1</en>",
+			"    </name>",
+			"    <specs>",
+			"       <power>$2</power>",
+			"       <maxSpeed>$3</maxSpeed>",
+			"    </specs>",
+			"    <functions>",
+			"       <function>$4</function>",
+			"    </functions>",
+			"    <image>$5</image>",
+			"    <price>$6</price>",
+			"    <lifetime>$7</lifetime>",
+			"    <rotation>$8</rotation>",
+			"    <brand>$9</brand>",
+			"    <shopTranslationOffset>$10</shopTranslationOffset>",
+			"    <shopRotationOffset>$11</shopRotationOffset>",
+			"    <vertexBufferMemoryUsage>$12</vertexBufferMemoryUsage>",
+			"    <indexBufferMemoryUsage>$13</indexBufferMemoryUsage>",
+			"    <textureMemoryUsage>$14</textureMemoryUsage>",
+			"    <instanceVertexBufferMemoryUsage>$15</instanceVertexBufferMemoryUsage>",
+			"    <instanceIndexBufferMemoryUsage>$16</instanceIndexBufferMemoryUsage>",
+			"    <audioMemoryUsage>$17</audioMemoryUsage>",
+			"</storeData>",
+			"$0"
+			
+		],
+		"description": "Create a universal storeData"
+	},
+	//base
+	"Base": {
+		"prefix": "/bs",
+		"body": [
+			"<base>",
+			"    <typeDesc>$1</typeDesc>",
+			"    <filename>$2</filename>",
+			"    <sounds filename=\"$3\"/>",
+			"    <size width=\"$4\" lenght=\"$5\" height=\"$6\" lengthOffset=\"$7\" />",
+			"    <components>",
+			"       <component centerOfMass=\"$8\" solverIterationCount=\"$9\" mass=\"$10\"/>",
+			"       <joint component1=\"$11\" component2=\"$12\" node=\"$13\" rotLimit=\"$14\" transLimit=\"$15\" breakable=\"$16\"/>",
+			"    </components>",
+			"    <schemaOverlay attacherJointPosition=\"$17\" name=\"$18\"/>",
+			"    <mapHost type=\"$19\" name=\"$20\"/>",
+			"    <steeringAxle node=\"$21\" />",
+			"</base>",
+			"",
+			"$0"
+		],
+		"description": "Create a base"
+	},
+	//wheels, wheelsConfigurations, crawlers
+	"Wheels": {
+		"prefix": "/whs",
+		"body": [
+			"<wheels>",
+			"    <wheelConfigurations>",
+			"        <wheelConfiguration>",
+			"            <wheels>",
+			"                <wheel filename=\"$1\" hasTireTracks=\"$2\" hasParticles=\"$3\">",
+			"                    <physics rotSpeed=\"$4\" restLoad=\"$5\" repr=\"$6\" radius=\"$7\" width=\"$8\" forcePointRatio=\"$9\" initialCompression=\"$10\" suspTravel=\"$11\" spring=\"$12\" damper=\"$13\" frictionScale=\"$14\" mass=\"$15\" tireType=\"$16\"/>",
+			"                    <tire tireTrackAtlasIndex=\"$17\" isCareWheel=\"$18\"/>",
+			"                <wheel>",
+			"            </wheels>",
+			"            <!--Crawlers section. Use \"/crwlrs\" to generate, delete if not using this-->",
+			"        </wheelConfiguration>",
+			"    </wheelConfigurations>",
+			"    <!--Hubs section. Use \"/hbs\" to generate, or delete if not using this-->",
+			"</wheels>",
+			"$0",
+		],
+		"description": "Create a wheels with a wheelConfiguration"
+	},
+	"Hubs": {
+		"prefix": "/hbs",
+		"body": [
+			"<hubs>",
+			"    <color0>$1</color0>",
+			"    <hub linkNode=\"$2\" filename=\"$3\" isLeft=\"$4\" scale=\"$5\"/>",
+			"</hubs>",
+			""
+		],
+		"description": "Create a wheel in the wheelConfiguration"
+	},
+	"Rim Color": {
+		"prefix": "/rimc",
+		"body": [
+			"<rimColor>$6</rimColor>",
+			"$0"
+		],
+		"description": "Create a rimColor in a wheels section"
+	},
+	"Wheel": {
+		"prefix": "/whl",
+		"body": [
+			"<wheel hasTireTracks=\"$1\" hasParticles=\"$2\">",
+			"     <physics rotSpeed=\"$3\" restLoad=\"$4\" repr=\"$5\" radius=\"$6\" width=\"$7\" forcePointRatio=\"$8\" initialCompression=\"$9\" suspTravel=\"$10\" spring=\"$11\" damper=\"$12\" frictionScale=\"$13\" mass=\"$14\" tireType=\"$15\"/>",
+			"    <tire tireTrackAtlasIndex=\"$16\" isCareWheel=\"$17\"/>",
+			"<wheel>",
+			"$0"
+		],
+		"description": "Create a wheel in the wheelConfiguration"
+	},
+	"Crawlers": {
+		"prefix": "/crwlrs",
+		"body": [
+			"<crawlers>",
+			"    <crawler filename=\"$1\" linkNode=\"$2\" wheelIndex=\"$3\" isLeft=\"$4\"/>",
+			"    $0",
+			"<crawlers>",
+			
+		],
+		"description": "Create a crawlers in the wheelConfiguration"
+	},
+	"Crawler": {
+		"prefix": "/crwlr",
+		"body": [
+			"<crawler filename=\"$1\" linkNode=\"$2\" wheelIndex=\"$3\" isLeft=\"$4\"/>",
+			"$0",
+			
+		],
+		"description": "Create a crawlers in the wheelConfiguration"
+	},
+	//dynamicallyLoadedParts
+	"Dinamically Loadable Parts": {
+		"prefix": "/dlp",
+		"body": [
+			"<dynamicallyLoadedParts>",
+			"    <dynamicallyLoadedPart node=\"$1\" linkNode=\"$2\" filename=\"$3\"/>",
+			"</dynamicallyLoadedParts>",
+			"$0"
+		],
+		"description": "Create a dynamicallyLoadedParts and one dynamicallyLoadedPart"
+	},
+	//attacherJoints, attacherJoint, attacherJoingConfigurations
+	"Attacher Joints": {
+		"prefix": "/ajs",
+		"body": [
+			"<attacherJoints comboDuration=\"$1\">",
+			"    $2",
+			"</attacherJoints>",
+			"$0"
+		],
+		"description": "Create a attacherJoints"
+	},
+	"Attacher Joint": {
+		"prefix": "/aj",
+		"body": [
+			"<attacherJoint node=\"$1\" rootNode=\"$2\" upperRotationOffset=\"$4\" moveTime=\"$5\" comboTime=\"$6\"/>",
+			"    <rotationNode node=\"$7\" upperRotation=\"$8\" lowerRotation=\"$9\"/>",
+			"    <rotationNode2 node=\"$10\"/>",
+			"    <bottomArm rotationNode=\"$11\" translationNode=\"$12\" referenceNode=\"$13\" zScale=\"$14\" startRotation=\"$15\"/>",
+			"    <topArm rotationNode=\"$16\" translationNode=\"$17\" referenceNode=\"$18\" zScale=\"$19\" startRotation=\"$20\"/>",
+			"    <schema position=\"$21\" rotation=\"$22\" invertX=\"$23\" invertY=\"$24\" invertZ=\"$25\"/>",
+			"</attacherJoint>$0"
+		],
+		"description": "Create a attacherJoint"
+	},
+	"Attacher Joint Trailer": {
+		"prefix": "/ajtr",
+		"body": [
+			"<attacherJoint node=\"$1\" rootNode=\"$2\" jointType=\"trailer\" lowerRotLimit=\"$3\" comboTime=\"$4\" allowsJointLimitMovement=\"$5\">",
+            "    <schema position=\"$6\" rotation=\"$7\" invertX=\"$8\"/>",
+            "    <objectChange node=\"$9\" translationActive=\"$10\" translationInactive=\"$11\" rotationActive=\"$12\" rotationInactive=\"$13\"/>",
+        	"</attacherJoint>$0"
+		],
+		"description": "Create a trailer attacherJoint"
+	},
+	"Attacher Joint Trailer Low": {
+		"prefix": "/ajtrlw",
+		"body": [
+			"<attacherJoint node=\"$1\" rootNode=\"$2\" jointType=\"trailerLow\" lowerRotLimit=\"$3\" comboTime=\"$4\" allowsJointLimitMovement=\"$5\">",
+            "    <schema position=\"$6\" rotation=\"$7\" invertX=\"$8\"/>",
+            "    <objectChange node=\"$9\" translationActive=\"$10\" translationInactive=\"$11\" rotationActive=\"$12\" rotationInactive=\"$13\"/>",
+        	"</attacherJoint>$0"
+		],
+		"description": "Create a trailer attacherJoint low"
+	},
+	"Attacher Joint Configurations": {
+		"prefix": "/ajcfgs",
+		"body": [
+			"<attacherJointConfigurations title=\"$1\">",
+			"    <attacherJointConfiguration name=\"$2\">",
+			"        $0",
+			"    </attacherJointConfiguration>",
+			"</attacherJointConfigurations>"
+		],
+		"description": "Create a full attacherJoints with attacherJoint, and attacherJointConfigurations"
+	},
+	"Attacher Joint Configuration": {
+		"prefix": "/ajcfg",
+		"body": [
+			"<attacherJointConfiguration name=\"$1\">",
+			"     $0",
+			"</attacherJointConfiguration>"
+		],
+		"description": "Create a attacherJointConfiguration in attacherJointConfigurations"
+	},
+	//i3dmapping, i3dmapping
+	"i3d Mappings": {
+		"prefix": "/i3dm",
+		"body": [
+			"<i3dMappings>",
+			"    <i3dMapping id=\"$1\" node=\"$2\"/>",
+			"    $0",
+			"</i3dMappings>"
+		],
+		"description": "Create a idMappings with a one i3dmapping"
+	},
+	"i3d Mapping": {
+		"prefix": "/i3dmn",
+		"body": [
+			"<i3dMapping id=\"$1\" node=\"$2\"/>$3",
+			"$0"
+		],
+		"description": "Create a single i3dmapping with id and node"
+	},
+	//wearable, washable, fiolageBending
+	"Wearable": {
+		"prefix": "/wrb",
+		"body": [
+			"<wearable wearDuration=\"$1\" workMultiplier=\"$2\" fieldMultiplier=\"$3\"/>",
+			"$0"
+		],
+		"description": "Create a wearable with a parameters"
+	},
+	"Washable": {
+		"prefix": "/wshb",
+		"body": [
+			"<washable dirtDuration=\"$1\" washDuration=\"$2\" workMultiplier=\"$3\" fieldMultiplier=\"$4\"/>",
+			"$0"
+		],
+		"description": "Create a washable with a parameters"
+	},
+	"Foliage Bending": {
+		"prefix": "/flgbnd",
+		"body": [
+			"<foliageBending>",
+			"    <bendingNode minX=\"$1\" maxX=\"$2\" minZ=\"$3\" maxZ=\"$4\" yOffset=\"$5\"/>",
+			"    $0",
+			"</foliageBending>",
+			""
+		],
+		"description": "Create a fiolageBending with a single item"
+	},
+	"Bending Node": {
+		"prefix": "/bnd",
+		"body": [
+			"<bendingNode minX=\"$1\" maxX=\"$2\" minZ=\"$3\" maxZ=\"$4\" yOffset=\"$5\"/>",
+			"$0"
+		],
+		"description": "Create a fiolageBending with a one item"
+	},
+	//baseMaterial, baseMaterialConfigurations, designMaterialConfigurations, rimColorConfiguration
+	"Base Material": {
+		"prefix": "/bm",
+		"body": [
+			"<baseMaterial>",
+			"    <material name=\"$1\" baseNode=\"$2\">",
+			"        <shaderParameter name=\"$3\" value=\"$4\"/>",
+			"    </material>",
+			"    $0",
+			"</baseMaterial>",
+			""
+		],
+		"description": "Create a baseMaterial with a one item"
+	},
+	"Material": {
+		"prefix": "/bmm",
+		"body": [
+			"<material name=\"$1\" baseNode=\"$2\">",
+			"    <shaderParameter name=\"$3\" value=\"$4\"/>",
+			"</material>",
+			"$0"
+		],
+		"description": "Create a material in the baseMaterial"
+	},
+	"Base material configurations": {
+		"prefix": "/bmcfg",
+		"body": [
+			"<baseMaterialConfigurations>",
+			"    <baseMaterialConfiguration name=\"$1\" color=\"$2\" price=\"$3\">",
+			"    <material name=\"$4\" shaderParameter=\"$5\"/>",
+			"</baseMaterialConfigurations>",
+			"$0"
+		],
+		"description": "Create a baseMaterialConfigurations with a one material configuration"
+	},
+	"Design material configurations": {
+		"prefix": "/dmcfg",
+		"body": [
+			"<designMaterialConfigurations>",
+			"    <designMaterialConfiguration name=\"$1\" color=\"$2\" price=\"$3\">",
+			"    <material name=\"$4\" shaderParameter=\"$5\"/>",
+			"</designMaterialConfigurations>",
+			"$0"
+		],
+		"description": "Create a designMaterialConfigurations with a one material configuration"
+	},
+	"Rim color configurations": {
+		"prefix": "/rccfg",
+		"body": [
+			"<rimColorConfigurations>",
+			"    <rimColorConfiguration name=\"$1\" color=\"$2\" price=\"$3\">",
+			"</rimColorConfigurations>",
+			"$0"
+		],
+		"description": "Create a rimColorConfigurations with a one rimColorConfiguration"
+	},
+	"Vehicle": {
+		"prefix": "/vh",
+		"body": [
+			"<vehicle>",
+			"    $0",
+			"</vehicle>"
+		],
+		"description": "Create a base vehicle "
+	},
+}
